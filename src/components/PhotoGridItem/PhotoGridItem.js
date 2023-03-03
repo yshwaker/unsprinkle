@@ -53,6 +53,8 @@ const Tags = styled.ul`
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  /* inline element has no way to push the parent container out, so we need to add padding on the parent element */
+  padding: 4px 0;
 `
 
 const Tag = styled.li`
@@ -61,13 +63,10 @@ const Tag = styled.li`
   background: var(--color-gray-300);
   font-size: 0.875rem;
   font-weight: 475;
-  line-height: 1.5;
   color: var(--color-gray-800);
 
-  margin-right: 8px;
-
-  &:last-child {
-    margin-right: 0;
+  &:not(:last-child) {
+    margin-right: 8px;
   }
 `
 
